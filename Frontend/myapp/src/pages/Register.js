@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
+import logo from "../img/logo.png";
 
 export default function Register() {
   const [email, setEmail] = useState("");
@@ -22,18 +23,38 @@ export default function Register() {
   };
 
   return (
-    <div className="grid grid-cols-1 justify-center items-center md:grid-cols-2 md:min-h-screen">
-    <div className="flex flex-col justify-center m-10">
+  //   <div className="grid grid-cols-1 justify-center items-center md:grid-cols-2 md:min-h-screen">
+  //   <div className="flex flex-col justify-center m-10">
       
-      <h1 className=" font-medium mx-auto"> สมัครใช้งานผู้สมัครงาน</h1>
+  //     <h1 className=" font-medium mx-auto"> สมัครใช้งานผู้สมัครงาน</h1>
 
-      <form className=" " onSubmit={onFinish}>
+      
+
+
+
+  //   </div>
+
+  //   {/* 2 */}
+  //   <div className="flex flex-col justify-center mx-10">
+  //     <h1 className="font-medium mx-auto">มีบัญชีแล้ว</h1>
+  //     <Link to="/Login" className="border-2 border-black rounded-3xl px-4 py-2 mt-4 mx-auto">
+  //         เข้าสู่ระบบ
+  //     </Link>
+  //   </div>
+  // </div>
+
+  <div className="min-h-screen bg-gradient-to-br from-orange-300 to-orange-600 flex items-center justify-center text-white ">
+    
+      <form className=" min-w-fit flex-col bg-cyan-900 px-6 py-6 shadow-md rounded-[8px]" onSubmit={onFinish}>
+      <div className=" flex justify-center">
+          <img className=" w-60 mx-24 md:mx-36 hover:rotate-12 hover:scale-125 duration-300" src={logo} alt="LeetCode Logo" />
+        </div>
       <div class="relative z-0 w-full mb-6 group">
               <input
                 type="email"
                 name="floating_email"
                 id="floating_email"
-                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-orange-400 appearance-none   focus:outline-none focus:ring-0 focus:border-orange-600 peer"
                 placeholder=" "
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
@@ -51,7 +72,7 @@ export default function Register() {
                 type="password"
                 name="floating_password"
                 id="floating_password"
-                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-orange-400 appearance-none   focus:outline-none focus:ring-0 focus:border-orange-600 peer"
                 placeholder=" "
                 required
               />
@@ -67,7 +88,7 @@ export default function Register() {
                 type="password"
                 name="repeat_password"
                 id="floating_repeat_password"
-                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-orange-400 appearance-none   focus:outline-none focus:ring-0 focus:border-orange-600 peer"
                 placeholder=" "
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
@@ -80,13 +101,13 @@ export default function Register() {
                 ยืนยันรหัสผ่าน
               </label>
             </div>
-            <div class="grid md:grid-cols-2 md:gap-6">
+            <div class="grid grid-cols-2 gap-6">
               <div class="relative z-0 w-full mb-6 group">
                 <input
                   type="text"
                   name="floating_first_name"
                   id="floating_first_name"
-                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-orange-400 appearance-none   focus:outline-none focus:ring-0 focus:border-orange-600 peer"
                   placeholder=" "
                   value={firstname}
                   onChange={(event) => setFirstname(event.target.value)}
@@ -104,7 +125,7 @@ export default function Register() {
                   type="text"
                   name="floating_last_name"
                   id="floating_last_name"
-                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-orange-400 appearance-none   focus:outline-none focus:ring-0 focus:border-orange-600 peer"
                   placeholder=" "
                   value={lastname}
                  onChange={(event) => setLastname(event.target.value)}
@@ -118,14 +139,14 @@ export default function Register() {
                 </label>
               </div>
             </div>
-            <div class="grid md:grid-cols-2 md:gap-6">
+            <div class="grid grid-cols-2 gap-6">
               <div class="relative z-0 w-full mb-6 group">
                 <input
                   type="tel"
                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                   name="floating_phone"
                   id="floating_phone"
-                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-orange-400 appearance-none   focus:outline-none focus:ring-0 focus:border-orange-600 peer"
                   placeholder=" "
                   value={telnumber}
                   onChange={(event) => setTelnumber(event.target.value)}
@@ -143,7 +164,7 @@ export default function Register() {
                   type="text"
                   name="floating_company"
                   id="floating_company"
-                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none   focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-orange-400 appearance-none   focus:outline-none focus:ring-0 focus:border-orange-600 peer"
                   placeholder=" "
                   value={occupation}
                   onChange={(event) => setOccupation(event.target.value)}
@@ -159,24 +180,20 @@ export default function Register() {
             </div>
             <button
               type="submit"
-              className="text-white bg-slate-500 hover:bg-slate-600 focus:ring-4 focus:outline-none focus:ring-slate-300 font-medium rounded-lg text-sm w-full  px-5 py-2.5 text-center "
+              className="bg-orange-400 text-cyan-950 rounded-[4px] hover:bg-orange-300 duration-300 w-full p-2"
             >
               สมัครสมาชิก
             </button>
+            <div className="mt-5 flex justify-between text-sm text-white">
+          <Link to="/Login">มีบัญชีแล้ว?</Link>
+          <Link to="/Login">
+          เข้าสู่ระบบ
+          </Link>
+          
+        </div>
 
       </form>
-
-
-
     </div>
 
-    {/* 2 */}
-    <div className="flex flex-col justify-center mx-10">
-      <h1 className="font-medium mx-auto">มีบัญชีแล้ว</h1>
-      <Link to="/Login" className="border-2 border-black rounded-3xl px-4 py-2 mt-4 mx-auto">
-          เข้าสู่ระบบ
-      </Link>
-    </div>
-  </div>
   );
 }

@@ -7,7 +7,7 @@ function Profile() {
     <div className="flex flex-col justify-center max-w-[1400px] mx-auto">
       <Navbar></Navbar>
       <div className="flex md:justify-center justify-between relative ml-10">
-        <h1>โปรไฟล์ของคุณ</h1>
+        <h1 className=" text-2xl font-medium">โปรไฟล์ของคุณ</h1>
         <h1 className="absolute right-10 border-2 border-black rounded-3xl px-2">แก้ไขประวัติ</h1>
       </div>
 

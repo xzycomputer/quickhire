@@ -23,20 +23,21 @@ function Navbar() {
 
 
   return (
-    <div className="Navbar flex justify-center relative md:justify-between items-center  m-10 rounded-xl bg-cyan-950 flex-wrap">
+    <div className="Navbar flex justify-center relative md:justify-between items-center  m-10 rounded-xl bg-cyan-900 flex-wrap">
         
         <div className='flex gap-5 md:gap-10 mx-10 items-center text-white'>
         <Link to="/Home"  class="transition duration-300 hover:scale-125"> <img src ={logo} className='w-24'></img></Link>
         <div className='md:flex gap-5 md:gap-10 items-center hidden'>
           <Link to="/Home"  class="transition duration-300 hover:rotate-12"> <h1>หน้าแรก</h1></Link>
           <Link to="/Profile"  class="transition duration-300 hover:rotate-12"> <h1>โปรไฟล์</h1></Link>
-          <Link to="/FindWork"  class="transition duration-300 hover:rotate-12"> <h1>ค้นหางาน</h1></Link>
+          <Link to="/Job"  class="transition duration-300 hover:rotate-12"> <h1>ค้นหางาน</h1></Link>
           <Link to="/Contact"  class="transition duration-300 hover:rotate-12"> <h1>ติดต่อเรา</h1></Link>
         </div>
         {/* <div className='mt-[0.5px]'><WorkRoundedIcon></WorkRoundedIcon></div> */}
         </div>
 
         <div className='md:flex gap-5 md:gap-10 items-center mx-10 text-white hidden'>
+          
           <Link to="/" onClick={handleLogout} class="transition duration-300 hover:scale-125">ออกจากระบบ</Link>
         </div>
 
@@ -53,7 +54,7 @@ function Navbar() {
           <div className="flex basis-full flex-col items-center flex-wrap gap-5 text-white mb-10">
             <Link to="/Home" >หน้าแรก</Link>
             <Link to="/Profile">โปรไฟล์</Link>
-            <Link to="/FindWork" >ค้นหางาน</Link>
+            <Link to="/Job" >ค้นหางาน</Link>
             <Link to="/Contact" >ติดต่อเรา</Link>
             <Link to="/" onClick={handleLogout} >ออกจากระบบ</Link>
           </div>

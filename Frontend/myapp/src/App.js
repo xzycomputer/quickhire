@@ -3,6 +3,8 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
+import Contact from "./pages/Contact";
+import Job from "./pages/Job";
 
 function App() {
   const token = localStorage.getItem("accessToken");
@@ -21,11 +23,13 @@ function App() {
   }
 
   return (
-    <div className="App font-kanit">
+    <div className="App font-kanit ">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/Profile" element={<Profile />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/Job" element={<Job />} />
       </Routes>
     </div>
   );
