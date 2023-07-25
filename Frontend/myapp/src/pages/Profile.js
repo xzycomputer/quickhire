@@ -47,7 +47,7 @@ function Profile() {
                 <div className="relative mx-10">
                     <div className=" rounded-full bg-slate-400 p-2 w-48 text-center  absolute left-1/2 -translate-x-1/2 -top-5"><h1>ความสามารถด้านภาษา</h1></div>
                     <div className=" rounded-2xl bg-slate-100 h-32">
-                        <h1 className="p-10">กำลังศึกษาปริญญาตรีคณะวิศวกรรมศาสตร์ มหาวิทยาลัยขอนแก่น</h1>
+                        <h1 className="p-10">อ่าน เขียน ภาษาไทย (ดีมาก) / อ่าน เขียน ภาษาอังกฤษ (ดี)</h1>
                     </div>
                 </div>
                 
@@ -55,19 +55,19 @@ function Profile() {
                 <div className="relative mx-10">
                     <div className=" rounded-full bg-slate-400 p-2 w-48 text-center  absolute left-1/2 -translate-x-1/2 -top-5"><h1>ความสามารถในการขับรถ</h1></div>
                     <div className=" rounded-2xl bg-slate-100 h-32">
-                        <h1 className="p-10">ไม่มีประสบการณ์ทำงาน</h1>
+                        <h1 className="p-10">รถจักรยานยนต์ / รถยนต์</h1>
                     </div>
                 </div>
                 <div className="relative mx-10">
                     <div className=" rounded-full bg-slate-400 p-2 w-48 text-center  absolute left-1/2 -translate-x-1/2 -top-5"><h1>ความสามารถพิเศษ</h1></div>
                     <div className=" rounded-2xl bg-slate-100 h-32">
-                        <h1 className="p-10">ไม่มีประสบการณ์ทำงาน</h1>
+                        <h1 className="p-10">สามารถว่ายน้ำได้ ร้องเล่นเต้นรำ</h1>
                     </div>
                 </div>
                 <div className="relative mx-10">
                     <div className=" rounded-full bg-slate-400 p-2 w-48 text-center  absolute left-1/2 -translate-x-1/2 -top-5"><h1>พื้นที่สะดวกรับงาน</h1></div>
                     <div className=" rounded-2xl bg-slate-100 h-32">
-                        <h1 className="p-10">ไม่มีประสบการณ์ทำงาน</h1>
+                        <h1 className="p-10">อำเภอเมือง จังหวัดขอนแก่น</h1>
                     </div>
                 </div>
                 

@@ -43,10 +43,6 @@ const Contact = () => {
                         <h1>pingnatni@gmail.com</h1>
                     </div>
                     <div className='flex gap-1 items-center'>
-                        <img src ={smartphone} className='w-6 '></img>
-                        <h1>0943678433</h1>
-                    </div>
-                    <div className='flex gap-1 items-center'>
                         <img src ={facebook} className='w-6 mr-2'></img>
                         <h1>Natnicha Preechaanantakul</h1>
                     </div>
@@ -80,10 +76,6 @@ const Contact = () => {
                     <div className='flex gap-1 items-center'>
                         <img src ={emailicon} className='w-6 mr-2'></img>
                         <h1>aphisit.kanphanom@gmail.com</h1>
-                    </div>
-                    <div className='flex gap-1 items-center'>
-                        <img src ={smartphone} className='w-6 '></img>
-                        <h1>0647750775</h1>
                     </div>
                     <div className='flex gap-1 items-center'>
                         <img src ={facebook} className='w-6 mr-2'></img>
@@ -121,10 +113,6 @@ const Contact = () => {
                         <h1>thidalak.m@kkumail.com</h1>
                     </div>
                     <div className='flex gap-1 items-center'>
-                        <img src ={smartphone} className='w-6 '></img>
-                        <h1>0956522651</h1>
-                    </div>
-                    <div className='flex gap-1 items-center'>
                         <img src ={facebook} className='w-6 mr-2'></img>
                         <h1>Thidalak Mueangphaen</h1>
                     </div>
@@ -158,10 +146,6 @@ const Contact = () => {
                     <div className='flex gap-1 items-center'>
                         <img src ={emailicon} className='w-6 mr-2'></img>
                         <h1>yotin.n@kkumail.com</h1>
-                    </div>
-                    <div className='flex gap-1 items-center'>
-                        <img src ={smartphone} className='w-6 '></img>
-                        <h1>0658586802</h1>
                     </div>
                     <div className='flex gap-1 items-center'>
                         <img src ={facebook} className='w-6 mr-2'></img>

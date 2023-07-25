@@ -8,11 +8,16 @@ const Job = () => {
 
   // Sample data for the cards
   const cardData = [
-    { restaurantName: "หมูปิ้งป้าแจ่ม", location: "หลังมอ ขอนแก่น", position: "ล้างจาน", hourlyIncome: 40 },
-    { restaurantName: "หมาปิ้งป้าใจ", location: "หลังมอ ขอนแก่น", position: "ล้างจาน", hourlyIncome: 40 },
-    { restaurantName: "แมวปิ้งป้าโจ๋น", location: "หลังมอ ขอนแก่น", position: "ล้างจาน", hourlyIncome: 40 },
-    { restaurantName: "ฮิปโปปิ้งป้าเจ๋ง", location: "หลังมอ ขอนแก่น", position: "ล้างจาน", hourlyIncome: 40 },
-    { restaurantName: "หมีป้าจุ๊", location: "หลังมอ ขอนแก่น", position: "ล้างจาน", hourlyIncome: 40 },
+
+
+    {restaurantName:"ก๋วยเตี๋ยวเปรี้ยวปาก", location:"หลังมอ ขอนแก่น", position:"พนักงานเสิร์ฟ", hourlyIncome:40, img:"https://inwfile.com/s-gi/oawsno.jpg"},
+    {restaurantName:"หมูปิ้งป้าแจ่ม", location:"หลังมอ ขอนแก่น", position:"ย่างหมูปิ้ง", hourlyIncome:35, img:"https://images.deliveryhero.io/image/fd-th/LH/owjr-hero.jpg"},
+    {restaurantName:"ชาบูโลมา", location:"หลังมอ ขอนแก่น", position:"ล้างจาน", hourlyIncome:45, img:"https://mpics.mgronline.com/pics/Images/564000010107801.JPEG"},
+    {restaurantName:"ซูชินิโฮะ", location:"หลังมอ ขอนแก่น", position:"พนักงานเสิร์ฟ", hourlyIncome:45, img:"https://inwfile.com/s-cu/osu8i9.jpg"},
+    {restaurantName:"คอหมูย่างจิ้มแจ่วหลังมอ", location:"หลังมอ ขอนแก่น", position:"ย่างหมู", hourlyIncome:35, img:"https://d.line-scdn.net/lcp-prod-photo/20210512_89/1620819569433jdaO1_JPEG/PWUU9PTH25FYIHENDULSZPX7TQY32O.jpg"},
+    {restaurantName:"พระจันทร์มันไก่", location:"หลังมอ ขอนแก่น", position:"ทำความสะอาด", hourlyIncome:40, img:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/2013_Khao_man_kai_Chiang_Mai.jpg/640px-2013_Khao_man_kai_Chiang_Mai.jpg"},
+    {restaurantName:"ปังก้อนกลม", location:"หลังมอ ขอนแก่น", position:"บาร์นํ้า", hourlyIncome:40, img:"https://p16-sign-sg.lemon8cdn.com/tos-alisg-v-a3e477-sg/c4f04735fcb240deab6fea3986432d56~tplv-sdweummd6v-shrink:1080:0:q50.webp?source=seo_feed_list&x-expires=1720742400&x-signature=ig3rBxheSptxJe2Q32OI7%2BR0SXA%3D"},
+    {restaurantName:"กาแฟคุณปู่", location:"หลังมอ ขอนแก่น", position:"บาร์นํ้า", hourlyIncome:40, img:"https://www.gourmetandcuisine.com/Images/editor_upload/_editor20180917023714_original.jpg"},
     // Add other card data as needed
   ];
 
@@ -48,6 +53,7 @@ const Job = () => {
             location={card.location}
             position={card.position}
             hourlyIncome={card.hourlyIncome}
+            img={card.img}
           />
         ))}
       </div>

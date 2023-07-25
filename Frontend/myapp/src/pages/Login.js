@@ -10,7 +10,7 @@ export default function Login() {
   const onFinish = (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:3001/validatePassword", { email, password })
+      .post("https://quickhirebackend.onrender.com/validatePassword", { email, password })
       .then((res) => {
         if (res.data.validation) {
           localStorage.setItem("accessToken", "Logged In");
@@ -37,7 +37,7 @@ export default function Login() {
             id="usernameEmail"
             className="mb-5 rounded-[4px] border p-3 hover:outline-none focus:outline-none hover:border-yellow-500 text-black"
             type="text"
-            placeholder="Admin@gmail.com"
+            placeholder="Ex.quickhire@gmail.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
