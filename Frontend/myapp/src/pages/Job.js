@@ -1,26 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Card from "../components/Card";
 
 const Job = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [jobs, setJobs] = useState([]);
 
-  // Sample data for the cards
-  const cardData = [
-    { restaurantName: "ก๋วยเตี๋ยวเปรี้ยวปาก", location: "หลังมอ ขอนแก่น", position: "พนักงานเสิร์ฟ", hourlyIncome: 40, img: "https://inwfile.com/s-gi/oawsno.jpg" },
-    { restaurantName: "หมูปิ้งป้าแจ่ม", location: "หลังมอ ขอนแก่น", position: "ย่างหมูปิ้ง", hourlyIncome: 35, img: "https://images.deliveryhero.io/image/fd-th/LH/owjr-hero.jpg" },
-    { restaurantName: "ชาบูโลมา", location: "หลังมอ ขอนแก่น", position: "ล้างจาน", hourlyIncome: 45, img: "https://mpics.mgronline.com/pics/Images/564000010107801.JPEG" },
-    { restaurantName: "ซูชินิโฮะ", location: "หลังมอ ขอนแก่น", position: "พนักงานเสิร์ฟ", hourlyIncome: 45, img: "https://inwfile.com/s-cu/osu8i9.jpg" },
-    { restaurantName: "คอหมูย่างจิ้มแจ่วหลังมอ", location: "หลังมอ ขอนแก่น", position: "ย่างหมู", hourlyIncome: 35, img: "https://d.line-scdn.net/lcp-prod-photo/20210512_89/1620819569433jdaO1_JPEG/PWUU9PTH25FYIHENDULSZPX7TQY32O.jpg" },
-    { restaurantName: "พระจันทร์มันไก่", location: "หลังมอ ขอนแก่น", position: "ทำความสะอาด", hourlyIncome: 40, img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/2013_Khao_man_kai_Chiang_Mai.jpg/640px-2013_Khao_man_kai_Chiang_Mai.jpg" },
-    { restaurantName: "ปังก้อนกลม", location: "หลังมอ ขอนแก่น", position: "บาร์นํ้า", hourlyIncome: 40, img: "https://p16-sign-sg.lemon8cdn.com/tos-alisg-v-a3e477-sg/c4f04735fcb240deab6fea3986432d56~tplv-sdweummd6v-shrink:1080:0:q50.webp?source=seo_feed_list&x-expires=1720742400&x-signature=ig3rBxheSptxJe2Q32OI7%2BR0SXA%3D" },
-    { restaurantName: "กาแฟคุณปู่", location: "หลังมอ ขอนแก่น", position: "บาร์นํ้า", hourlyIncome: 40, img: "https://www.gourmetandcuisine.com/Images/editor_upload/_editor20180917023714_original.jpg" },
-    // Add other card data as needed
-  ];
+  useEffect(() => {
+    fetchJobs();
+  }, []);
+
+  const fetchJobs = async () => {
+    try {
+      const response = await axios.get('http://localhost:3001/alljobs'); // Replace with your API endpoint
+      setJobs(response.data.data);
+    } catch (error) {
+      console.error('Error fetching jobs:', error);
+    }
+  };
+
+  const decodeBlobToImageUrl = (blobData) => {
+    if (!blobData) return null;
+    const blob = new Blob([new Uint8Array(blobData.data)], { type: "image/jpeg" });
+    const imageUrl = URL.createObjectURL(blob);
+    return imageUrl;
+  };
 
   // Filter the cards based on the search term
-  const filteredCards = cardData.filter((card) => card.restaurantName.toLowerCase().includes(searchTerm.toLowerCase()));
+  const filteredCards = jobs.filter((card) => card.shopname.toLowerCase().includes(searchTerm.toLowerCase()));
 
   return (
     <div className="Job max-w-[1400px] mx-auto">
@@ -33,8 +42,23 @@ const Job = () => {
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 mx-6 md:gap-10 gap-y-12 ">
-        {filteredCards.map((card, index) => (
-          <Card key={index} restaurantName={card.restaurantName} location={card.location} position={card.position} hourlyIncome={card.hourlyIncome} img={card.img} />
+        {filteredCards.map((job, index) => ( // Changed 'card' to 'job' in map function
+          <Card
+            key={index}
+            restaurantName={job.shopname} // Fixed the prop names to match the 'job' object
+            minilocation={job.minilocation}
+            position={job.workposition}
+            hourlyIncome={job.money}
+            img={decodeBlobToImageUrl(job.img)}
+            lat={job.lat}
+            long={job.long}
+            peopleneed={job.peopleneed}
+            jobdesc={job.jobdesc}
+            timework={job.timework}
+            welfare={job.welfare}
+            location={job.location}
+            email={job.email}
+          />
         ))}
       </div>
       <Footer></Footer>
