@@ -14,7 +14,7 @@ export default function Register() {
   const onFinish = (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:3001/insertUser", {
+      .post("https://quickhirebackend.onrender.com/insertUser", {
         email,
         password,
         firstname,

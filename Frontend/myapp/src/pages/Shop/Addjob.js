@@ -67,7 +67,7 @@ const Addjob = () => {
 
 
     try {
-        const response = await axios.post('http://localhost:3001/uploadJob', formData, {
+        const response = await axios.post('https://quickhirebackend.onrender.com/uploadJob', formData, {
           headers: {
             'Content-Type': 'multipart/form-data', // Set the proper Content-Type header
           },
