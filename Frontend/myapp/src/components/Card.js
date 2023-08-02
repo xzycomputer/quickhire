@@ -5,13 +5,12 @@ import job from "../img/user.png";
 
 import { MapContainer } from 'react-leaflet/MapContainer'
 import { TileLayer } from 'react-leaflet/TileLayer'
-import { useMap } from 'react-leaflet/hooks'
 import { Marker, Popup } from 'react-leaflet'
 import L from "leaflet"; // Import Leaflet library for creating custom icon
 import customMarkerIcon from "../img/pin.png";
 
 
-function Card({ restaurantName, location, position, hourlyIncome,img }) {
+function Card({ restaurantName, minilocation, position, hourlyIncome,img,lat,long,peopleneed,jobdesc,timework,welfare,location,email}) {
   const [showModal, setShowModal] = React.useState(false);
 
   return (
@@ -29,7 +28,7 @@ function Card({ restaurantName, location, position, hourlyIncome,img }) {
           <h2 className="text-lg font-bold mb-2 md:text-xl">{restaurantName}</h2>
           <div className="flex items-center py-1">
             <img src={map} alt="Location" className="w-6 h-6 mr-4" />
-            <p className="text-gray-600">{location}</p>
+            <p className="text-gray-600">{minilocation}</p>
           </div>
           <div className="flex items-center py-1 ">
             <img src={job} alt="Position" className="w-6 h-6 mr-4" />
@@ -73,12 +72,12 @@ function Card({ restaurantName, location, position, hourlyIncome,img }) {
                   className=" h-[200px] md:h-[300px] transition-opacity duration-300 ease-in-out rounded-xl mx-auto"
                 />
                 {/* Add leaflet tailwind here */}
-                <MapContainer center={[14.879330, 102.025284]} zoom={14} scrollWheelZoom={false} style={{ width: '500px' }} className='rounded-xl '>
+                <MapContainer center={[lat, long]} zoom={14} scrollWheelZoom={false} style={{ width: '500px' }} className='rounded-xl '>
                   <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                   />
-                  <Marker position={[14.879330, 102.025284]} icon={L.icon({ iconUrl: customMarkerIcon,iconSize: [30, 30] })}>
+                  <Marker position={[lat, long]} icon={L.icon({ iconUrl: customMarkerIcon,iconSize: [30, 30] })}>
                     <Popup>
                       {restaurantName}
                     </Popup>
@@ -91,19 +90,19 @@ function Card({ restaurantName, location, position, hourlyIncome,img }) {
                     <div className="flex">
                       <h1 className=" whitespace-nowrap  "> รายละเอียดงาน</h1>
                       <span role="img" aria-label="sheep" className="mr-2">💼:</span>
-                      <h1 className="">ต้อนรับ อธิบายเมนูอาหาร แนะนำอาหาร เครื่องดื่มให้กับลูกค้า ดูแลแผงอาหาร เติมอาหารและเครื่องดื่มในร้านตลอดไม่ให้ขาด ตรวจสอบว่าลูกค้าต้องการอะไรเพิ่มเติม ดูแลลูกค้า และดำเนินการแก้ไขเมื่อเกิดปัญหา รับชำระเงินค่าอาหารและเครื่องดื่มจากลูกค้า</h1>
+                      <h1 className="">{jobdesc}</h1>
                     </div>
 
                     <div className="flex">
                       <h1 className=" whitespace-nowrap  "> เวลาทำงาน</h1>
                       <span role="img" aria-label="sheep" className="mr-2">🕜:</span>
-                      <h1 className="">16:00 - 23:00 น.</h1>
+                      <h1 className="">{timework}</h1>
                     </div>
 
                     <div className="flex">
                       <h1 className=" whitespace-nowrap  "> สวัสดิการ</h1>
                       <span role="img" aria-label="sheep" className="mr-2">💼:</span>
-                      <h1 className="">-</h1>
+                      <h1 className="">{welfare}</h1>
                     </div>
 
                     <div className="flex">
@@ -113,20 +112,20 @@ function Card({ restaurantName, location, position, hourlyIncome,img }) {
 
                       <h1 className=" whitespace-nowrap ml-3"> จำนวนคน</h1>
                       <span role="img" aria-label="sheep" className="mr-2">👨‍🦱:</span>
-                      <h1 className="">5 คน</h1>
+                      <h1 className="">{peopleneed}</h1>
                     </div>
 
                     <div className="flex">
                       <h1 className=" whitespace-nowrap  "> สถานที่</h1>
                       <span role="img" aria-label="sheep" className="mr-2">📍:</span>
-                      <h1 className="">123 หมู่ 16 ถ.มิตรภาพ ต.ในเมือง อ.เมือง จ.ขอนแก่น 40002</h1>
+                      <h1 className="">{location}</h1>
                     </div>
 
                     <div className="flex items-center justify-between pb-10">
                       <div className="flex">
                           <h1 className=" whitespace-nowrap  "> สอบถามเพิ่มเติม</h1>
                           <span role="img" aria-label="sheep" className="mr-2">📧:</span>
-                          <h1 className="">quickhire@gmail.com</h1>
+                          <h1 className="">{email}</h1>
                       </div>
                       <div>
                       <button
@@ -147,10 +146,6 @@ function Card({ restaurantName, location, position, hourlyIncome,img }) {
                     </div>
                   </div>
                   
-              
-
-
-              
               </div>
             </div>
           </div>
