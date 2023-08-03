@@ -25,6 +25,7 @@ export default function Register() {
       .then((res) => {
         localStorage.setItem("accessToken", "Logged In");
         localStorage.setItem("user", email);
+        localStorage.setItem("role","user")
         localStorage.setItem("newuser","new")
         window.location.replace("/");
       });

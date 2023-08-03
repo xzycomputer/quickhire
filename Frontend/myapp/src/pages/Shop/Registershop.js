@@ -25,6 +25,7 @@ export default function Registershop() {
       .then((res) => {
         localStorage.setItem("accessToken", "Logged In");
         localStorage.setItem("user", email);
+        localStorage.setItem("role","shop")
         localStorage.setItem("newuser","new")
         window.location.replace("/");
       });
