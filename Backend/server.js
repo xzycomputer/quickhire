@@ -7,7 +7,19 @@ const sqlite3 = require("sqlite3").verbose();
 const multer = require("multer");
 const upload = multer({ dest: "uploads/" });
 
-app.use(cors());
+const allowedOrigins = ['https://quickhire-seven.vercel.app'];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // Check if the origin is allowed, or allow requests with no origin (e.g., file://)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
+
 app.use(express.json({ limit: "10mb" }));
 
 let db = new sqlite3.Database("users.db", (err) => {
