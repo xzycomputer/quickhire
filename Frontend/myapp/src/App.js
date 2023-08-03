@@ -56,10 +56,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Home" element={<Home />} />
-          <Route path="/Profile" element={<Profileshop />} />
+          <Route path="/Profile" element={<Createshop />} />
           <Route path="/Editprofile" element={<Createshop />} />
           <Route path="/Contact" element={<Contact />} />
-          <Route path="/Job" element={<Job />} />
+          <Route path="/Job" element={<Createshop />} />
         </Routes>
       </div>
     );
