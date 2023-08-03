@@ -342,7 +342,7 @@ app.post("/insertShop", (req, res) => {
     req.body;
 
   db.run(
-    `INSERT INTO shops (email, password, firstname,lastname,telnumber,shopname,role,jobdesc,timework,money,lat,long,personamount,welfare,img,newuser) VALUES ('${email}', '${password}', '${firstname}','${lastname}','${telnumber}','${shop}','shop',null,null,null,null,null,null,null,null,'new')`,
+    `INSERT INTO shops (email, password, firstname,lastname,telnumber,shopname,role,location,timework,money,lat,long,personamount,welfare,img,newuser) VALUES ('${email}', '${password}', '${firstname}','${lastname}','${telnumber}','${shop}','shop',null,null,null,null,null,null,null,null,'new')`,
     (err) => {
       if (err) {
         throw err;
